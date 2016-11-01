@@ -11,7 +11,7 @@
             android:translateX="-1.000000"
             android:translateY="160.000000">
             <path
-                android:fillColor="#301F28"
+                android:fillColor="#000000"
                 android:fillAlpha="0.736823694"
                 android:fillType="evenOdd"
                 android:strokeAlpha="0.736823694"
