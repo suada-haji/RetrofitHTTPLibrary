@@ -1,6 +1,7 @@
 package com.android.java.miss.retrofithttplibrary.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +11,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.java.miss.retrofithttplibrary.R;
+import com.android.java.miss.retrofithttplibrary.activity.DetailActivity;
 import com.android.java.miss.retrofithttplibrary.model.Movie;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.util.ArrayList;
+
+import static com.android.java.miss.retrofithttplibrary.activity.MainActivity.MOVIE_BUNDLE;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
 
-  private List<Movie> movies;
+  private ArrayList<Movie> movies;
   private int rowLayout;
-  private Context context;
+  private static Context context;
 
   public static class MovieViewHolder extends RecyclerView.ViewHolder {
     RelativeLayout moviesLayout;
@@ -27,7 +31,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     TextView movieTitle;
     TextView date;
     TextView rating;
-
+    String movie_id;
 
     public MovieViewHolder(View v) {
       super(v);
@@ -36,11 +40,20 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
       movieTitle = (TextView) v.findViewById(R.id.movie_title);
       date = (TextView) v.findViewById(R.id.movie_date);
       rating = (TextView) v.findViewById(R.id.rating);
+      movie_id = null;
+
+      v.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(context, DetailActivity.class);
+          intent.putExtra(MOVIE_BUNDLE, movie_id);
+          context.startActivity(intent);
+        }
+      });
     }
   }
 
-
-  public MoviesAdapter(List<Movie> movies, int rowLayout, Context context) {
+  public MoviesAdapter(ArrayList<Movie> movies, int rowLayout, Context context) {
     this.movies = movies;
     this.rowLayout = rowLayout;
     this.context = context;
@@ -57,10 +70,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     holder.movieTitle.setText(movies.get(position).getTitle());
     holder.date.setText(movies.get(position).getReleaseDate());
     Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getBackdropPath()).into(holder.moviePoster);
-    holder.rating.setText(movies.get(position).getVoteAverage().toString());
+    holder.rating.setText(Double.toString(movies.get(position).getVoteAverage()));
+    holder.movie_id = String.valueOf(movies.get(position).getId());
   }
+
   @Override
   public int getItemCount() {
     return movies.size();
   }
+
 }
