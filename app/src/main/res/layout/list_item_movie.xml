@@ -1,18 +1,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/movies_layout"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_width="190dp"
+                android:layout_height="290dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp">
-    <android.support.v7.widget.CardView
+    <!--<android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp">-->
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="matrix"/>
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -32,7 +33,7 @@
                 android:layout_weight="2"
                 android:text="Jack Reacher: Never Go Back"
                 android:textColor="@android:color/white"
-                android:textSize="16sp"/>
+                android:textSize="10sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,6 +41,8 @@
                 android:layout_weight="2"
                 android:orientation="horizontal"
                 android:weightSum="3">
+
+
 
                 <TextView
                     android:id="@+id/movie_date"
@@ -49,31 +52,37 @@
                     android:text="2011-11-02"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"/>
-
-                <ImageView
-                    android:id="@+id/rating_image"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/star"
-                    android:tint="@color/colorAccent"/>
-
-                <TextView
-
-                    android:id="@+id/rating"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="5.0"
-                    android:textColor="@android:color/white"/>
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_background">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/rating_image"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/star"
+                        android:tint="@color/colorAccent"/>
+
+                    <TextView
+
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="5.0"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+
             </LinearLayout>
 
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
-
+   <!-- </android.support.v7.widget.CardView>
+-->
 
 
 

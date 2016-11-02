@@ -69,7 +69,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
   public void onBindViewHolder(MovieViewHolder holder, final int position) {
     holder.movieTitle.setText(movies.get(position).getTitle());
     holder.date.setText(movies.get(position).getReleaseDate());
-    Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getBackdropPath()).into(holder.moviePoster);
+    Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getPosterPath()).into(holder.moviePoster);
     holder.rating.setText(Double.toString(movies.get(position).getVoteAverage()));
     holder.movie_id = String.valueOf(movies.get(position).getId());
   }

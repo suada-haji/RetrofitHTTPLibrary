@@ -2,17 +2,17 @@ package com.android.java.miss.retrofithttplibrary.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.java.miss.retrofithttplibrary.rest.ApiInterface;
 import com.android.java.miss.retrofithttplibrary.R;
 import com.android.java.miss.retrofithttplibrary.adapter.MoviesAdapter;
 import com.android.java.miss.retrofithttplibrary.model.Movie;
 import com.android.java.miss.retrofithttplibrary.model.MovieResponse;
 import com.android.java.miss.retrofithttplibrary.rest.ApiClient;
+import com.android.java.miss.retrofithttplibrary.rest.ApiInterface;
 
 import java.util.ArrayList;
 
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity{
 
   public static final String MOVIE_BUNDLE = "MOVIE_BUNDLE";
 
+  private GridLayoutManager layoutManager;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -37,8 +39,10 @@ public class MainActivity extends AppCompatActivity{
       Toast.makeText(getApplicationContext(), "Please obtain your API KEY first from themoviedb.org", Toast.LENGTH_LONG);
       return;
     }
+
     final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setHasFixedSize(true);
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
     ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
