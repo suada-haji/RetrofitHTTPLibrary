@@ -141,7 +141,6 @@
                      android:layout_marginRight="10dp"
                      android:adjustViewBounds="true"/>
              </LinearLayout>
-
          </HorizontalScrollView>-->
 
     </RelativeLayout>
