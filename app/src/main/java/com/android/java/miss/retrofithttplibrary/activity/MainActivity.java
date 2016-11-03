@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.android.java.miss.retrofithttplibrary.R;
 import com.android.java.miss.retrofithttplibrary.adapter.ViewPagerAdapter;
 import com.android.java.miss.retrofithttplibrary.fragments.NowPlayingMoviesFragment;
+import com.android.java.miss.retrofithttplibrary.fragments.PopularMoviesFragment;
 import com.android.java.miss.retrofithttplibrary.fragments.TopRatedMoviesFragment;
 import com.android.java.miss.retrofithttplibrary.fragments.UpcomingMoviesFragment;
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
     adapter.addFragment(new TopRatedMoviesFragment(), "TOP RATED");
     adapter.addFragment(new UpcomingMoviesFragment(), "UPCOMING");
     adapter.addFragment(new NowPlayingMoviesFragment(), "NOW PLAYING");
-    adapter.addFragment(new TopRatedMoviesFragment(), "POPULAR");
+    adapter.addFragment(new PopularMoviesFragment(), "POPULAR");
     viewPager.setAdapter(adapter);
   }
 
