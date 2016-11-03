@@ -3,11 +3,6 @@ package com.android.java.miss.retrofithttplibrary.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by suadahaji.
- */
 
 public class Movie {
 
@@ -20,9 +15,9 @@ public class Movie {
   @SerializedName("release_date")
   private String releaseDate;
   @SerializedName("genre_ids")
-  private List<Integer> genreIds = new ArrayList<Integer>();
+  private ArrayList<Integer> genreIds = new ArrayList<>();
   @SerializedName("id")
-  private Integer id;
+  private int id;
   @SerializedName("original_title")
   private String originalTitle;
   @SerializedName("original_language")
@@ -32,15 +27,19 @@ public class Movie {
   @SerializedName("backdrop_path")
   private String backdropPath;
   @SerializedName("popularity")
-  private Double popularity;
+  private double popularity;
   @SerializedName("vote_count")
-  private Integer voteCount;
+  private int voteCount;
   @SerializedName("video")
-  private Boolean video;
+  private boolean video;
   @SerializedName("vote_average")
-  private Double voteAverage;
+  private double voteAverage;
 
-  public Movie(String originalTitle, String originalLanguage, String title, String backdropPath, Double popularity,
+  public Movie() {
+
+  }
+
+  public Movie(String posterPath, boolean adult, String overview, String releaseDate, ArrayList<Integer> genreIds, int id,String originalTitle, String originalLanguage, String title, String backdropPath, Double popularity,
   Integer voteCount, Boolean video, Double voteAverage) {
     this.posterPath = posterPath;
     this.adult = adult;
@@ -90,19 +89,19 @@ public class Movie {
     this.releaseDate = releaseDate;
   }
 
-  public List<Integer> getGenreIds() {
+  public ArrayList<Integer> getGenreIds() {
     return genreIds;
   }
 
-  public void setGenreIds(List<Integer> genreIds) {
+  public void setGenreIds(ArrayList<Integer> genreIds) {
     this.genreIds = genreIds;
   }
 
-  public Integer getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(int id) {
     this.id = id;
   }
 
@@ -138,35 +137,35 @@ public class Movie {
     this.backdropPath = backdropPath;
   }
 
-  public Double getPopularity() {
+  public double getPopularity() {
     return popularity;
   }
 
-  public void setPopularity(Double popularity) {
+  public void setPopularity(double popularity) {
     this.popularity = popularity;
   }
 
-  public Integer getVoteCount() {
+  public int getVoteCount() {
     return voteCount;
   }
 
-  public void setVoteCount(Integer voteCount) {
+  public void setVoteCount(int voteCount) {
     this.voteCount = voteCount;
   }
 
-  public Boolean getVideo() {
+  public boolean getVideo() {
     return video;
   }
 
-  public void setVideo(Boolean video) {
+  public void setVideo(boolean video) {
     this.video = video;
   }
 
-  public Double getVoteAverage() {
+  public double getVoteAverage() {
     return voteAverage;
   }
 
-  public void setVoteAverage(Double voteAverage) {
+  public void setVoteAverage(double voteAverage) {
     this.voteAverage = voteAverage;
   }
 }
