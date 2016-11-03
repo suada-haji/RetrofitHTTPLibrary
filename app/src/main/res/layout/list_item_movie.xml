@@ -29,7 +29,7 @@
                 android:layout_weight="2"
                 android:text="Jack Reacher: Never Go Back"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"/>
+                android:textSize="12sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
