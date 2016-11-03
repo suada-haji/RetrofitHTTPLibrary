@@ -45,7 +45,7 @@
                     android:id="@+id/rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="8dp"
                     android:textSize="15sp"
                     android:textColor="@android:color/black"/>
 
@@ -54,6 +54,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:scaleType="centerCrop"
+                    android:layout_marginTop="2.5dp"
                     android:src="@drawable/star"
                     android:tint="@color/colorAccent"/>
             </LinearLayout>
