@@ -2,6 +2,7 @@ package com.android.java.miss.retrofithttplibrary.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class DetailActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_detail);
+    final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     getSupportActionBar().setTitle("Detail Activity");
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,7 +52,6 @@ public class DetailActivity extends AppCompatActivity {
         movieRating.setText(Double.toString(response.body().getVoteAverage()));
         releaseDate.setText(response.body().getReleaseDate());
         overview.setText(response.body().getOverview());
-
       }
 
       @Override
