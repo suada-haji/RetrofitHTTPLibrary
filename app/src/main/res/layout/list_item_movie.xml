@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/movies_layout"
                 android:layout_width="190dp"
                 android:layout_height="290dp"
@@ -8,8 +7,7 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="65dp"
@@ -30,7 +28,6 @@
                 android:text="Jack Reacher: Never Go Back"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -51,7 +48,6 @@
                     android:background="@drawable/button_background"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp">
-
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/rating_image"
                         android:layout_width="15dp"
