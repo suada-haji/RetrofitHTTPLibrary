@@ -31,6 +31,7 @@ import static com.android.java.miss.retrofithttplibrary.activity.MainActivity.AP
  */
 
 public class TopRatedMoviesFragment extends Fragment {
+  public static boolean isTwoPane = false;
 
   public TopRatedMoviesFragment() {
 
@@ -47,7 +48,14 @@ public class TopRatedMoviesFragment extends Fragment {
     View view = inflater.inflate(R.layout.top_rated_movies_fragment, container, false);
     final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.movies_recycler_view);
     recyclerView.setHasFixedSize(true);
-    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+    if (view.findViewById(R.id.detailContainer) != null) {
+      isTwoPane = true;
+      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+    } else {
+      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+    }
+
 
     ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 

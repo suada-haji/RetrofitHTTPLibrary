@@ -1,8 +1,11 @@
 package com.android.java.miss.retrofithttplibrary.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,8 @@ import android.widget.TextView;
 
 import com.android.java.miss.retrofithttplibrary.R;
 import com.android.java.miss.retrofithttplibrary.activity.DetailActivity;
+import com.android.java.miss.retrofithttplibrary.fragments.DetailFragment;
+import com.android.java.miss.retrofithttplibrary.fragments.TopRatedMoviesFragment;
 import com.android.java.miss.retrofithttplibrary.model.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -45,14 +50,26 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
       v.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-          Intent intent = new Intent(context, DetailActivity.class);
-          intent.putExtra(MOVIE_BUNDLE, movie_id);
-          context.startActivity(intent);
+          if (TopRatedMoviesFragment.isTwoPane) {
+            openTwoPane(movie_id);
+            Log.d("Suada", movie_id);
+             }  else {
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra(MOVIE_BUNDLE, movie_id);
+            context.startActivity(intent);
+          }
         }
       });
     }
-  }
 
+    public void openTwoPane(String id_movie) {
+      Bundle bundle = new Bundle();
+      bundle.putString(DetailActivity.MOVIE_ID, id_movie);
+      DetailFragment fragment = new DetailFragment();
+      fragment.setArguments(bundle);
+      ((Activity)context).getFragmentManager().beginTransaction().replace(R.id.detailContainer,fragment).commit();
+    }
+  }
   public MoviesAdapter(ArrayList<Movie> movies, int rowLayout, Context context) {
     this.movies = movies;
     this.rowLayout = rowLayout;
@@ -78,5 +95,4 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
   public int getItemCount() {
     return movies.size();
   }
-
 }
