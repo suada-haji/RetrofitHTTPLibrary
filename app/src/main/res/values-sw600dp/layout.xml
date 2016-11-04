@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="top_rated_movies_fragment" type="layout">
+        @layout/top_rated_movies_fragment_large
+    </item>
+</resources>
