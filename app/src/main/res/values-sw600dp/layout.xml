@@ -3,4 +3,7 @@
     <item name="top_rated_movies_fragment" type="layout">
         @layout/top_rated_movies_fragment_large
     </item>
+    <item name="list_item_movie" type="layout">
+        @layout/list_item_movie_large
+    </item>
 </resources>
