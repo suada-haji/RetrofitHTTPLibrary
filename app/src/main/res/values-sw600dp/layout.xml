@@ -9,4 +9,7 @@
     <item name="list_item_movie" type="layout">
         @layout/list_item_movie_large
     </item>
+    <item name="activity_detail" type="layout">
+        @layout/activity_detail_large
+    </item>
 </resources>
