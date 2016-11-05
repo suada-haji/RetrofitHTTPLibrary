@@ -17,7 +17,7 @@ public class DetailActivity extends AppCompatActivity {
     setContentView(R.layout.activity_movie_detail);
     final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
-    getSupportActionBar().setTitle("    Movie");
+    getSupportActionBar().setTitle(" Movie");
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     if (savedInstanceState == null) {
       DetailFragment fragment = new DetailFragment();

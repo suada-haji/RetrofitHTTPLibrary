@@ -61,11 +61,16 @@ public class DetailFragment extends Fragment{
     call.enqueue(new Callback<Movie>() {
       @Override
       public void onResponse(Call<Movie> call, Response<Movie> response) {
+
         movieTitle.setText(response.body().getTitle());
-        Picasso.with(getContext()).load("http://image.tmdb.org/t/p/original/" + response.body().getPosterPath()).into(movieImage);
         movieRating.setText(Double.toString(response.body().getVoteAverage()));
         releaseDate.setText(response.body().getReleaseDate());
         overview.setText(response.body().getOverview());
+        if (TopRatedMoviesFragment.isTwoPane) {
+          Picasso.with(getContext()).load("http://image.tmdb.org/t/p/original/" + response.body().getBackdropPath()).into(movieImage);
+        } else {
+          Picasso.with(getContext()).load("http://image.tmdb.org/t/p/original/" + response.body().getPosterPath()).into(movieImage);
+        }
       }
 
       @Override

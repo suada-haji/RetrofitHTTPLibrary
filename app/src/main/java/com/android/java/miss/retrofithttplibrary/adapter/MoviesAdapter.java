@@ -5,12 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.java.miss.retrofithttplibrary.R;
@@ -29,9 +27,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
   private ArrayList<Movie> movies;
   private int rowLayout;
   private static Context context;
+  private static final String TAG = MoviesAdapter.class.getSimpleName();
 
   public static class MovieViewHolder extends RecyclerView.ViewHolder {
-    RelativeLayout moviesLayout;
     ImageView moviePoster;
     TextView movieTitle;
     TextView date;
@@ -40,11 +38,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
     public MovieViewHolder(View v) {
       super(v);
-      moviesLayout = (RelativeLayout) v.findViewById(R.id.movies_layout);
-      moviePoster = (ImageView) v.findViewById(R.id.iv_image);
-      movieTitle = (TextView) v.findViewById(R.id.movie_title);
-      date = (TextView) v.findViewById(R.id.movie_date);
-      rating = (TextView) v.findViewById(R.id.rating);
+
+      if (!TopRatedMoviesFragment.isTwoPane) {
+        moviePoster = (ImageView) v.findViewById(R.id.iv_image);
+        movieTitle = (TextView) v.findViewById(R.id.movie_title);
+        date = (TextView) v.findViewById(R.id.movie_date);
+        rating = (TextView) v.findViewById(R.id.rating);
+      } else {
+        moviePoster = (ImageView) v.findViewById(R.id.iv_image);
+      }
       movie_id = null;
 
       v.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +54,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         public void onClick(View view) {
           if (TopRatedMoviesFragment.isTwoPane) {
             openTwoPane(movie_id);
-            Log.d("Suada", movie_id);
              }  else {
             Intent intent = new Intent(context, DetailActivity.class);
             intent.putExtra(MOVIE_BUNDLE, movie_id);
@@ -84,11 +85,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
   @Override
   public void onBindViewHolder(MovieViewHolder holder, final int position) {
-    holder.movieTitle.setText(movies.get(position).getTitle());
-    holder.date.setText(movies.get(position).getReleaseDate());
-    Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getPosterPath()).into(holder.moviePoster);
-    holder.rating.setText(Double.toString(movies.get(position).getVoteAverage()));
     holder.movie_id = String.valueOf(movies.get(position).getId());
+
+    if (!TopRatedMoviesFragment.isTwoPane) {
+      holder.movieTitle.setText(movies.get(position).getTitle());
+      holder.date.setText(movies.get(position).getReleaseDate());
+      holder.rating.setText(Double.toString(movies.get(position).getVoteAverage()));
+      Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getPosterPath()).into(holder.moviePoster);
+    } else {
+      Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + movies.get(position).getPosterPath()).into(holder.moviePoster);
+    }
+
+
   }
 
   @Override
