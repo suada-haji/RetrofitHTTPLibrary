@@ -26,9 +26,11 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 import static com.android.java.miss.retrofithttplibrary.activity.MainActivity.API_KEY;
 
-public class UpcomingMoviesFragment extends Fragment {
-  public static boolean isTwoPane = false;
+/**
+ * Created by suadahaji.
+ */
 
+public class UpcomingMoviesFragment extends Fragment{
   public UpcomingMoviesFragment() {
 
   }
@@ -44,12 +46,8 @@ public class UpcomingMoviesFragment extends Fragment {
     View view = inflater.inflate(R.layout.upcoming_movies_fragment, container, false);
     final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.movies_recycler_view);
     recyclerView.setHasFixedSize(true);
-    if (view.findViewById(R.id.detailContainer) != null) {
-      isTwoPane = true;
-      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
-    } else {
-      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-    }
+    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
     ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
     Call<MovieResponse> call = apiService.getUpcomingMovies(API_KEY);
