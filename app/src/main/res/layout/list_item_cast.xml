@@ -4,12 +4,6 @@
               android:orientation="vertical"
               android:layout_width="220dp"
               android:layout_height="match_parent">
-<!--
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/cast_image"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        app:riv_corner_radius="30dp"/>-->
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cast_image"
@@ -27,7 +21,7 @@
         android:fontFamily="roboto"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="12sp"/>
     <com.devspark.robototextview.widget.RobotoTextView
         android:id="@+id/cast_character"
         android:layout_width="wrap_content"
@@ -36,6 +30,6 @@
         android:fontFamily="roboto"
         android:textColor="@android:color/black"
         app:textWeight="light"
-        android:textSize="20sp"/>
+        android:textSize="12sp"/>
 
 </LinearLayout>
