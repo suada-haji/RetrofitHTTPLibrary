@@ -95,7 +95,6 @@ public class DetailFragment extends Fragment{
       public void onResponse(Call<CastResponse> call, Response<CastResponse> response) {
         ArrayList<MovieCasts> movieCasts = response.body().getCasts();
         recyclerView.setAdapter(new CastAdapter(movieCasts, R.layout.list_item_cast, getContext()));
-       // Log.d("Casts", "Size" + movieCasts.size());
       }
 
       @Override

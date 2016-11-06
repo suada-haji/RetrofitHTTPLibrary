@@ -15,4 +15,7 @@
     <item name="list_item_cast" type="layout">
         @layout/list_item_cast_large
     </item>
+    <item name="upcoming_movies_fragment" type="layout">
+        @layout/upcoming_movies_fragment_large
+    </item>
 </resources>
