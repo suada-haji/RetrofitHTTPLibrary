@@ -7,7 +7,11 @@ To work with Retrofit you need basically three classes.
 - Interfaces which defines the possible HTTP operations
 - Retrofit.Builder class - Instance which uses the interface. Builder API which allows defining the URL end point for the HTTP operation.
 
-For this tutorial I used [TMDb API](https://www.themoviedb.org/documentation/api). In order to use this API it is necessary to obtain the API key
+For this tutorial I used [TMDb API](https://www.themoviedb.org/documentation/api). In order to use this API it is necessary to obtain the API key.
+
+|<img src="/screenshots/screenshot2.png">|<img src="/screenshots/screenshot3.png">|<img src="/screenshots/screenshot4.png">|
+| ------------- |:-------------:| -----:|
+
 ### Setup
 Make sure to require Internet permissions in your AndroidManifest.xml file:
 ```javascript
