@@ -18,4 +18,7 @@
     <item name="upcoming_movies_fragment" type="layout">
         @layout/upcoming_movies_fragment_large
     </item>
+    <item name="now_playing_fragment" type="layout">
+        @layout/now_playing_fragment_large
+    </item>
 </resources>
