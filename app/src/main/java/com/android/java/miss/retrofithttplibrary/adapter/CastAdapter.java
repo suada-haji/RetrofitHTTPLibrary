@@ -48,7 +48,6 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastViewHolder
 
   @Override
   public void onBindViewHolder(CastViewHolder holder, int position) {
-
     holder.castName.setText(casts.get(position).getName());
     holder.castCharacter.setText(casts.get(position).getCharacter());
     Picasso.with(context).load("http://image.tmdb.org/t/p/original/" + casts.get(position).getProfilePath()).into(holder.castImage);
