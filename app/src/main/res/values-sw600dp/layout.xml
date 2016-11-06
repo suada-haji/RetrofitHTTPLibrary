@@ -12,4 +12,7 @@
     <item name="activity_detail" type="layout">
         @layout/activity_detail_large
     </item>
+    <item name="list_item_cast" type="layout">
+        @layout/list_item_cast_large
+    </item>
 </resources>
