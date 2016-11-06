@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
-              android:layout_width="220dp"
+              android:layout_width="120dp"
               android:layout_height="match_parent">
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,25 +11,29 @@
         android:layout_height="90dp"
         android:src="@drawable/image_one"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        app:civ_border_color="#FF000000"
+        android:layout_gravity="center_horizontal"
+        />
 
     <com.devspark.robototextview.widget.RobotoTextView
         android:id="@+id/cast_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Benedict Cumberbatch"
         android:fontFamily="roboto"
         android:textColor="@android:color/black"
+        android:textAlignment="center"
         android:textStyle="bold"
         android:textSize="12sp"/>
     <com.devspark.robototextview.widget.RobotoTextView
         android:id="@+id/cast_character"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Stephen Strange / Doctor Strange"
         android:fontFamily="roboto"
         android:textColor="@android:color/black"
         app:textWeight="light"
+        android:textAlignment="center"
         android:textSize="12sp"/>
 
 </LinearLayout>
