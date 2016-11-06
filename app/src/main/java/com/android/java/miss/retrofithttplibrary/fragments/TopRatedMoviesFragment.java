@@ -26,6 +26,10 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 import static com.android.java.miss.retrofithttplibrary.activity.MainActivity.API_KEY;
 
+/**
+ * Created by suadahaji.
+ */
+
 public class TopRatedMoviesFragment extends Fragment {
   public static boolean isTwoPane = false;
 
@@ -51,6 +55,8 @@ public class TopRatedMoviesFragment extends Fragment {
     } else {
       recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
     }
+
+
     ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
     Call<MovieResponse> call = apiService.getTopRatedMovies(API_KEY);
