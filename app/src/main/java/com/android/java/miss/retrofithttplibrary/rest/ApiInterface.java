@@ -1,5 +1,6 @@
 package com.android.java.miss.retrofithttplibrary.rest;
 
+import com.android.java.miss.retrofithttplibrary.model.CastResponse;
 import com.android.java.miss.retrofithttplibrary.model.Movie;
 import com.android.java.miss.retrofithttplibrary.model.MovieResponse;
 
@@ -23,4 +24,11 @@ public interface ApiInterface {
 
   @GET("movie/{id}")
   Call<Movie> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
+
+  @GET("movie/{id}/casts")
+  Call<CastResponse> getMovieCasts(@Path("id") int id, @Query("api_key") String apiKey);
+  /*@GET("movie/{id}/casts")
+  Call<MovieCasts> getMovieCasts(@Path("id") int id, @Query("api_key") String apiKey);
+*/
+
 }

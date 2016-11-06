@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="activity_main" type="layout">
+        @layout/activity_main_large
+    </item>
+    <item name="top_rated_movies_fragment" type="layout">
+        @layout/top_rated_movies_fragment_large
+    </item>
+    <item name="list_item_movie" type="layout">
+        @layout/list_item_movie_large
+    </item>
+    <item name="activity_detail" type="layout">
+        @layout/activity_detail_large
+    </item>
+    <item name="list_item_cast" type="layout">
+        @layout/list_item_cast_large
+    </item>
+</resources>

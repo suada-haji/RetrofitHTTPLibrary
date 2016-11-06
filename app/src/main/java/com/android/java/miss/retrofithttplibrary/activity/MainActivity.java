@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
@@ -21,8 +20,6 @@ public class MainActivity extends AppCompatActivity{
   public final static String API_KEY = "5ab68c282365772dba538bd0db9f5fda";
 
   public static final String MOVIE_BUNDLE = "MOVIE_BUNDLE";
-
-  private GridLayoutManager layoutManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +51,4 @@ public class MainActivity extends AppCompatActivity{
     adapter.addFragment(new PopularMoviesFragment(), "POPULAR");
     viewPager.setAdapter(adapter);
   }
-
-
 }

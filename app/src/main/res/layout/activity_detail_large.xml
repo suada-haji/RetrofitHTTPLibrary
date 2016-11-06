@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.android.java.miss.retrofithttplibrary.activity.DetailActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/movie_image"
+            android:layout_width="fill_parent"
+            android:layout_height="390dp"
+            android:scaleType="fitXY"
+            app:riv_corner_radius_bottom_left="4dp"
+            app:riv_corner_radius_top_left="4dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:weightSum="3">
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@android:color/black"
+                android:textSize="35sp"
+                android:fontFamily="roboto"
+                app:textWeight="bold"/>
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/release_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/black"
+                android:fontFamily="roboto"
+                android:textSize="30sp"
+                app:textWeight="medium"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/overview_head"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rowLayout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Overview"
+                android:fontFamily="roboto"
+                app:textWeight="medium"
+                android:textSize="30sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background_large">
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"/>
+
+                    <ImageView
+                        android:id="@+id/rating_image"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/star"
+                        android:tint="@color/colorAccent"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/overview"
+            android:layout_width="580dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/overview_head"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:fontFamily="roboto"
+            app:textWeight="light"
+            android:gravity="fill_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
+        <LinearLayout
+            android:id="@+id/rowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginLeft="5dp">
+
+
+        </LinearLayout>
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movie Casts"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="roboto"
+            app:textWeight="medium"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="10dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/casts_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:layout_marginLeft="20dp"/>
+
+
+        <!-- <HorizontalScrollView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/overview">
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_below="@id/overview">
+                 <com.makeramen.roundedimageview.RoundedImageView
+                     android:layout_width="100dp"
+                     android:layout_height="200dp"
+                     app:riv_corner_radius="100dp"
+                     android:src="@drawable/image_two"
+                     android:layout_marginRight="10dp"
+                     android:adjustViewBounds="true"/>
+             </LinearLayout>
+         </HorizontalScrollView>-->
+
+    </LinearLayout>
+</ScrollView>

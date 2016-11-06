@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/activity_left_margin"
+                android:paddingLeft="@dimen/activity_right_margin"
+                android:paddingTop="@dimen/activity_left_margin"
+    android:weightSum="5">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/movies_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+    <FrameLayout
+        android:id="@+id/detailContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4.5"/>
+
+</LinearLayout>
+
+
+
+
