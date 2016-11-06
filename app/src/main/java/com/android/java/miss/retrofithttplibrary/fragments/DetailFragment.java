@@ -94,7 +94,9 @@ public class DetailFragment extends Fragment{
       @Override
       public void onResponse(Call<CastResponse> call, Response<CastResponse> response) {
         ArrayList<MovieCasts> movieCasts = response.body().getCasts();
-        recyclerView.setAdapter(new CastAdapter(movieCasts, R.layout.list_item_cast, getContext()));
+        if (movieCasts.size() != 0) {
+          recyclerView.setAdapter(new CastAdapter(movieCasts, R.layout.list_item_cast, getContext()));
+        }
       }
 
       @Override

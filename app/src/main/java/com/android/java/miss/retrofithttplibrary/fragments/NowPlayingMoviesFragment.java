@@ -31,6 +31,7 @@ import static com.android.java.miss.retrofithttplibrary.activity.MainActivity.AP
  */
 
 public class NowPlayingMoviesFragment extends Fragment {
+  private static boolean isTwoPane = false;
   public NowPlayingMoviesFragment() {
 
   }
@@ -46,8 +47,12 @@ public class NowPlayingMoviesFragment extends Fragment {
     View view = inflater.inflate(R.layout.now_playing_fragment, container, false);
     final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.movies_recycler_view);
     recyclerView.setHasFixedSize(true);
-    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-
+    if (view.findViewById(R.id.detailContainer) != null) {
+      isTwoPane = true;
+      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+    } else {
+      recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+    }
     ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
     Call<MovieResponse> call = apiService.getNowPlayingMovies(API_KEY);
